@@ -1,0 +1,43 @@
+To create a script in Python that locks (encrypts) a PDF with a password, you can use the PyPDF2 library. This script will take an existing PDF file and create a new encrypted PDF file with a specified password.
+Step-by-Step Guide to Locking a PDF with Python
+1. Install PyPDF2
+First, you need to install the PyPDF2 library if you haven't already:
+pip install PyPDF2
+2. Python Script to Lock a PDF
+Below is a simple Python script to lock a PDF file with a password:
+from PyPDF2 import PdfReader, PdfWriter
+
+def lock_pdf(input_pdf_path, output_pdf_path, password):
+    # Create a PdfReader object to read the input PDF
+    reader = PdfReader(input_pdf_path)
+    
+    # Create a PdfWriter object to write the new PDF
+    writer = PdfWriter()
+    
+    # Add all pages from the reader to the writer
+    for page_num in range(len(reader.pages)):
+        writer.add_page(reader.pages[page_num])
+    
+    # Encrypt the PDF with the provided password
+    writer.encrypt(password)
+    
+    # Write the encrypted PDF to a new file
+    with open(output_pdf_path, 'wb') as output_file:
+        writer.write(output_file)
+    
+    print(f"Locked PDF saved as: {output_pdf_path}")
+
+# Example usage
+input_pdf_path = 'input.pdf'  # Path to the input PDF
+output_pdf_path = 'locked_output.pdf'  # Path to the output locked PDF
+password = 'your_password'  # Password for the PDF
+
+lock_pdf(input_pdf_path, output_pdf_path, password)
+How to Use the Script
+Save the Script: Save the above code in a Python file, for example, lock_pdf.py.
+
+Prepare Your PDF: Ensure you have a PDF file (input.pdf) in the same directory as your script or specify the correct path to your PDF file.
+
+Run the Script: Open your terminal or command prompt and run the script:
+python lock_pdf.py
+Check the Output: The script will generate a new file (locked_output.pdf) in the same directory, which will be locked with the specified password.
