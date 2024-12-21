@@ -2,7 +2,7 @@
 - 👀 I’m interested in ...Hacking
 - 🌱 I’m currently learning ...ethical hacking
 - 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...from my instagram ravineet_442
+- 📫 How to reach me ...from my instagram soulfuladmirer
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...all its fun 
 
